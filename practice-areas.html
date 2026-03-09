@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Areas | Jubayer & Associates</title>
+
+    <meta name="description"
+        content="Explore Advocate Jubaiyer's specialized legal practice areas including Bank and Bank Companies, VAT & Customs, and complex litigation in Bangladesh.">
+
+    <link rel="icon" href="https://via.placeholder.com/32x32.png?text=AJ" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0a192f',
+                        navyLight: '#112240',
+                        gold: '#C5A059',
+                        goldHover: '#d4af37',
+                        offWhite: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+    </style>
+</head>
+
+<body class="bg-offWhite text-gray-800 font-sans antialiased">
+
+    <!-- Solid Header for Internal Pages -->
+    <header id="main-header" data-transparent="false"
+        class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 z-20">
+                    <a href="index.html" class="flex flex-col group">
+                        <span
+                            class="logo-text text-2xl font-serif font-bold text-navy tracking-tight transition-colors">Jubayer
+                            & Associates</span>
+                        <span
+                            class="text-[10px] text-gold font-medium uppercase tracking-[0.2em] mt-1 group-hover:text-goldHover transition-colors">Reliable
+                            Legal Solutions</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="index.html"
+                        class="text-navy/70 hover:text-navy font-serif font-medium text-sm tracking-widest uppercase transition-all">Home</a>
+                    <a href="about.html"
+                        class="text-navy/70 hover:text-navy font-serif font-medium text-sm tracking-widest uppercase transition-all">About</a>
+                    <a href="practice-areas.html"
+                        class="text-navy font-serif font-bold text-sm tracking-widest uppercase border-b-2 border-gold pb-1 transition-all active">Practice
+                        Areas</a>
+                    <a href="blog.html"
+                        class="text-navy/70 hover:text-navy font-serif font-medium text-sm tracking-widest uppercase transition-all">Blog</a>
+                    <a href="contact.html"
+                        class="text-navy/70 hover:text-navy font-serif font-medium text-sm tracking-widest uppercase transition-all">Contact</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="contact.html"
+                        class="bg-navy text-white hover:bg-gold hover:text-navy px-6 py-3 rounded-sm font-bold tracking-widest uppercase text-xs transition-all shadow-md hover:shadow-gold duration-300">Book
+                        Consultation</a>
+                </div>
+
+                <div class="md:hidden flex items-center z-20">
+                    <button id="mobile-menu-btn"
+                        class="text-navy hover:text-gold focus:outline-none p-2 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl">
+            <div class="px-6 py-8 space-y-6 text-center">
+                <a href="index.html" class="block font-serif text-xl tracking-wide">
+                    Home
+                </a>
+                <a href="about.html" class="block font-serif text-xl tracking-wide">
+                    About
+                </a>
+                <a href="practice-areas.html" class="block font-serif text-xl tracking-wide">
+                    Practice Areas
+                </a>
+                <a href="blog.html" class="block font-serif text-xl tracking-wide">
+                    Blog
+                </a>
+                <a href="contact.html" class="block font-serif text-xl tracking-wide">
+                    Contact
+                </a>
+                <div class="pt-4">
+                    <a href="contact.html"
+                        class="inline-block bg-navy text-white hover:bg-gold hover:text-navy px-8 py-3 rounded-sm font-bold tracking-widest uppercase text-xs transition-all">
+                        Book Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 min-h-screen">
+        <!-- Header Section -->
+        <section class="py-20 bg-navy relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="pictures/office_2.jpeg" alt="Legal Books" class="w-full h-full object-cover opacity-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 text-center relative z-10 animate-fade-in-up">
+                <p class="text-gold font-sans uppercase tracking-[0.2em] text-sm font-semibold mb-3">Core Expertise</p>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Strategic Practice Areas</h1>
+                <p class="text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+                    Advocate Jubaiyer focuses his practice on specific, high-stakes areas of law, ensuring deep,
+                    specialized knowledge and aggressive advocacy for exactly the types of challenges his clients face.
+                </p>
+            </div>
+        </section>
+
+        <!-- Detailed Practice Areas Grid -->
+        <section class="py-24 bg-offWhite">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Area 1: Bank and Bank Companies -->
+                <div
+                    class="flex flex-col md:flex-row bg-white rounded-sm shadow-premium overflow-hidden mb-12 reveal-on-scroll border border-gray-100 group">
+                    <div class="md:w-2/5 relative overflow-hidden">
+                        <img src="pictures/office_10.jpeg" alt="Banking"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="md:w-3/5 p-10 lg:p-14 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-university text-gold text-2xl mr-4"></i>
+                            <h2 class="text-3xl font-serif font-bold text-navy">Bank and Bank Companies</h2>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Expert legal advisory and litigation services for financial institutions, ensuring
+                            regulatory compliance and effective loan recovery strategies.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-8 font-light list-none pl-0">
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Loan Syndication & Recovery
+                            </li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Artha Rin Adalat Cases</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Negotiable Instruments Act
+                            </li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Regulatory Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Area 2: Company -->
+                <div
+                    class="flex flex-col md:flex-row-reverse bg-white rounded-sm shadow-premium overflow-hidden mb-12 reveal-on-scroll border border-gray-100 group">
+                    <div class="md:w-2/5 relative overflow-hidden">
+                        <img src="pictures/office_12.jpeg" alt="Corporate Building"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="md:w-3/5 p-10 lg:p-14 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-building text-gold text-2xl mr-4"></i>
+                            <h2 class="text-3xl font-serif font-bold text-navy">Company</h2>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Comprehensive corporate law services including incorporation, shareholder disputes, mergers,
+                            and corporate governance.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-8 font-light list-none pl-0">
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Corporate Structuring</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Shareholder Disputes</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Contract Negotiation</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Commercial Litigation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Area 3: VAT & Customs -->
+                <div
+                    class="flex flex-col md:flex-row bg-white rounded-sm shadow-premium overflow-hidden mb-12 reveal-on-scroll border border-gray-100 group">
+                    <div class="md:w-2/5 relative overflow-hidden">
+                        <img src="pictures/office_13.jpeg" alt="VAT and Customs"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="md:w-3/5 p-10 lg:p-14 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-invoice-dollar text-gold text-2xl mr-4"></i>
+                            <h2 class="text-3xl font-serif font-bold text-navy">VAT & Customs</h2>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Strategic counsel on complex taxation, VAT tribunals, customs disputes, and representation
+                            before revenue authorities.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-8 font-light list-none pl-0">
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Appellate Tribunal</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Customs Duty Disputes</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Tax Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Area 4: Land Matters -->
+                <div
+                    class="flex flex-col md:flex-row-reverse bg-white rounded-sm shadow-premium overflow-hidden mb-12 reveal-on-scroll border border-gray-100 group">
+                    <div class="md:w-2/5 relative overflow-hidden">
+                        <img src="pictures/office_5.jpeg" alt="Land Matters"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="md:w-3/5 p-10 lg:p-14 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marked-alt text-gold text-2xl mr-4"></i>
+                            <h2 class="text-3xl font-serif font-bold text-navy">Land Matters</h2>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Navigating complex land litigation, property registration, title verification, and asserting
+                            rightful ownership.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-8 font-light list-none pl-0">
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Title Verification</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Lease Disputes</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> Transfer Litigation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Area 5: Criminal -->
+                <div
+                    class="flex flex-col md:flex-row bg-white rounded-sm shadow-premium overflow-hidden mb-12 reveal-on-scroll border border-gray-100 group">
+                    <div class="md:w-2/5 relative overflow-hidden">
+                        <img src="pictures/office_7.jpeg" alt="Criminal Defense"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-navy/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="md:w-3/5 p-10 lg:p-14 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-gavel text-gold text-2xl mr-4"></i>
+                            <h2 class="text-3xl font-serif font-bold text-navy">Criminal</h2>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Aggressive defense representation to protect your liberty, reputation, and future against
+                            serious criminal allegations.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-8 font-light list-none pl-0">
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> White-Collar Crime</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> ACC Cases</li>
+                            <li><i class="fas fa-arrow-right text-gold/70 w-5 text-xs"></i> High Court Appeals</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-navy text-center reveal-on-scroll">
+            <h2 class="text-2xl font-serif font-bold text-white mb-6">Need counsel on a specific matter?</h2>
+            <a href="contact.html"
+                class="inline-block bg-gold hover:bg-goldHover text-navy font-bold uppercase tracking-wider text-xs py-3 px-8 rounded-sm shadow-gold transition-colors duration-300">Contact
+                The Firm</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navyLight pt-20 pb-10 border-t-[3px] border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 border-b border-white/10 pb-16">
+                <div class="mb-10 md:mb-0 text-center md:text-left max-w-sm">
+                    <a href="index.html" class="inline-block mb-6">
+                        <span class="text-2xl font-serif font-bold text-white tracking-tight">Jubayer &
+                            Associates</span><br />
+                        <span class="text-[10px] text-gold font-medium uppercase tracking-[0.2em]">Reliable Legal
+                            Solutions</span>
+                    </a>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">
+                        Delivering uncompromising advocacy and tailored legal strategies from the heart of Dhaka,
+                        Bangladesh.
+                    </p>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <h4 class="text-white font-sans uppercase tracking-[0.15em] text-xs font-semibold mb-6">Direct
+                        Contact</h4>
+                    <a href="tel:+8801720545533"
+                        class="block text-2xl font-serif text-gold hover:text-white transition-colors mb-2 tracking-tighter">01720-545533</a>
+                    <a href="mailto:jubayerandassociates@gmail.com"
+                        class="block text-gray-400 hover:text-white transition-colors text-sm mb-6">jubayerandassociates@gmail.com</a>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light tracking-wide">
+                <p class="mb-4 md:mb-0">&copy; 2026 Jubayer & Associates. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="privacy-policy.html" class="hover:text-gold transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

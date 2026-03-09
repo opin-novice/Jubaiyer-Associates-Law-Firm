@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Jubayer & Associates</title>
+
+    <meta name="description"
+        content="Legal insights and articles from Advocate Jubaiyer on topics including corporate law, criminal defense, and legal trends in Bangladesh.">
+
+    <link rel="icon" href="https://via.placeholder.com/32x32.png?text=AJ" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0a192f',
+                        navyLight: '#112240',
+                        gold: '#C5A059',
+                        goldHover: '#d4af37',
+                        offWhite: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-offWhite text-gray-800 font-sans antialiased">
+
+    <!-- Header -->
+    <header id="main-header" data-transparent="false"
+        class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 z-20">
+                    <a href="index.html" class="flex flex-col group">
+                        <span
+                            class="logo-text text-2xl font-serif font-bold text-navy tracking-tight transition-colors">Jubayer
+                            & Associates</span>
+                        <span
+                            class="text-[10px] text-gold font-medium uppercase tracking-[0.2em] mt-1 group-hover:text-goldHover transition-colors">Reliable
+                            Legal Solutions</span>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-10 items-center">
+                    <a href="index.html"
+                        class="nav-link relative text-navy/70 hover:text-navy font-medium text-sm uppercase tracking-wider transition-colors">
+                        Home
+                    </a>
+                    <a href="about.html"
+                        class="nav-link relative text-navy/70 hover:text-navy font-medium text-sm uppercase tracking-wider transition-colors">
+                        About
+                    </a>
+                    <a href="practice-areas.html"
+                        class="nav-link relative text-navy/70 hover:text-navy font-medium text-sm uppercase tracking-wider transition-colors">
+                        Practice Areas
+                    </a>
+                    <a href="blog.html"
+                        class="nav-link relative text-navy font-medium text-sm uppercase tracking-wider active border-b-2 border-gold pb-1">
+                        Blog
+                    </a>
+                    <a href="contact.html"
+                        class="nav-link relative text-navy/70 hover:text-navy font-medium text-sm uppercase tracking-wider transition-colors">
+                        Contact
+                    </a>
+                </nav>
+
+                <div class="md:hidden flex items-center z-20">
+                    <button id="mobile-menu-btn"
+                        class="text-navy hover:text-gold focus:outline-none p-2 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl">
+            <div class="px-6 py-8 space-y-6 text-center">
+                <a href="index.html" class="block text-navy/80 hover:text-navy font-serif text-xl tracking-wide">Home</a>
+                <a href="about.html" class="block text-navy/80 hover:text-navy font-serif text-xl tracking-wide">About</a>
+                <a href="practice-areas.html" class="block text-navy/80 hover:text-navy font-serif text-xl tracking-wide">Practice Areas</a>
+                <a href="blog.html" class="block text-gold font-serif font-bold text-xl tracking-wide">Blog</a>
+                <a href="contact.html" class="block text-navy/80 hover:text-navy font-serif text-xl tracking-wide">Contact</a>
+                <div class="pt-4">
+                    <a href="contact.html"
+                        class="inline-block bg-navy text-white hover:bg-gold hover:text-navy px-8 py-3 rounded-sm font-bold tracking-widest uppercase text-xs transition-all">Book
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 min-h-screen">
+        <!-- Page Title -->
+        <section class="py-20 bg-navy relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="pictures/office_9.jpeg" alt="Law library" class="w-full h-full object-cover opacity-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 text-center relative z-10 animate-fade-in-up">
+                <p class="text-gold font-sans uppercase tracking-[0.2em] text-sm font-semibold mb-3">Legal Insights</p>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-white">The Legal Brief</h1>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="py-24 bg-offWhite">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+
+                    <!-- Blog Post Card 1 -->
+                    <div class="bg-white rounded-sm shadow-lg overflow-hidden group reveal-on-scroll transform hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
+                        <a href="blog-post-1.html" class="block">
+                            <div class="relative h-56 overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="pictures/office_4.jpeg" alt="Negotiation">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-gold bg-navy/80 px-2 py-1 rounded">Corporate Law</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-xs text-gray-500 mb-2 uppercase tracking-wider">March 07, 2026</p>
+                                <h3 class="text-xl font-serif font-bold text-navy mb-3 leading-tight group-hover:text-gold transition-colors">The Art of Negotiation in Corporate Mergers</h3>
+                                <p class="text-gray-600 font-light text-sm leading-relaxed mb-4">A look into the critical negotiation tactics that can make or break a high-stakes corporate merger...</p>
+                                <span class="font-bold text-sm text-navy group-hover:text-gold transition-colors">Read More <i class="fas fa-arrow-right text-xs ml-1"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Blog Post Card 2 -->
+                    <div class="bg-white rounded-sm shadow-lg overflow-hidden group reveal-on-scroll transform hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
+                        <a href="#" class="block">
+                            <div class="relative h-56 overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="pictures/office_7.jpeg" alt="Gavel">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-gold bg-navy/80 px-2 py-1 rounded">Criminal Defense</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-xs text-gray-500 mb-2 uppercase tracking-wider">February 28, 2026</p>
+                                <h3 class="text-xl font-serif font-bold text-navy mb-3 leading-tight group-hover:text-gold transition-colors">Understanding Bail in the Bangladeshi Legal System</h3>
+                                <p class="text-gray-600 font-light text-sm leading-relaxed mb-4">A primer on the crucial first steps after an arrest and the nuances of securing bail in Bangladesh...</p>
+                                <span class="font-bold text-sm text-navy group-hover:text-gold transition-colors">Read More <i class="fas fa-arrow-right text-xs ml-1"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Blog Post Card 3 -->
+                    <div class="bg-white rounded-sm shadow-lg overflow-hidden group reveal-on-scroll transform hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
+                        <a href="#" class="block">
+                            <div class="relative h-56 overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="pictures/office_13.jpeg" alt="Tax documents">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-gold bg-navy/80 px-2 py-1 rounded">VAT & Customs</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-xs text-gray-500 mb-2 uppercase tracking-wider">February 15, 2026</p>
+                                <h3 class="text-xl font-serif font-bold text-navy mb-3 leading-tight group-hover:text-gold transition-colors">Recent Changes in VAT Law and What They Mean for Your Business</h3>
+                                <p class="text-gray-600 font-light text-sm leading-relaxed mb-4">An overview of the latest amendments to the VAT and Supplementary Duty Act and their practical implications...</p>
+                                <span class="font-bold text-sm text-navy group-hover:text-gold transition-colors">Read More <i class="fas fa-arrow-right text-xs ml-1"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Add more cards as needed -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navyLight pt-20 pb-10 border-t-[3px] border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 border-b border-white/10 pb-16">
+                <div class="mb-10 md:mb-0 text-center md:text-left max-w-sm">
+                    <a href="index.html" class="inline-block mb-6">
+                        <span class="text-2xl font-serif font-bold text-white tracking-tight">Jubayer & Associates</span><br />
+                        <span class="text-[10px] text-gold font-medium uppercase tracking-[0.2em]">Reliable Legal Solutions</span>
+                    </a>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">
+                        Delivering uncompromising advocacy and tailored legal strategies from the heart of Dhaka, Bangladesh.
+                    </p>
+                </div>
+                <div class="text-center md:text-right">
+                    <h4 class="text-white font-sans uppercase tracking-[0.15em] text-xs font-semibold mb-6">Direct Contact</h4>
+                    <a href="tel:+8801720545533" class="block text-2xl font-serif text-gold hover:text-white transition-colors mb-2 tracking-tighter">01720-545533</a>
+                    <a href="mailto:jubayerandassociates@gmail.com" class="block text-gray-400 hover:text-white transition-colors text-sm mb-6">jubayerandassociates@gmail.com</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light tracking-wide">
+                <p class="mb-4 md:mb-0">&copy; 2026 Jubayer & Associates. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="privacy-policy.html" class="hover:text-gold transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

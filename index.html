@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jubayer & Associates | Reliable Legal Solutions</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Strategic legal representation by Advocate Jubaiyer. Dedicated to excellence in Criminal, Corporate, and Family Law in Dhaka, Bangladesh.">
+    <meta name="keywords"
+        content="Advocate Jubaiyer, Dhaka lawyer, single lawyer firm Bangladesh, Criminal law, Corporate law, Premium legal services">
+    <meta name="author" content="Advocate Jubaiyer">
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="Advocate Jubaiyer | Strategic Legal Representation">
+    <meta property="og:description"
+        content="Dedicated to justice and excellence. Premium legal representation for complex matters in Dhaka.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.advocatejubaiyer.com/">
+    <meta property="og:image" content="pictures/office_11.jpeg">
+
+    <link rel="icon" href="https://via.placeholder.com/32x32.png?text=AJ" type="image/x-icon">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0a192f',       // Deep luxurious navy
+                        navyLight: '#112240',
+                        gold: '#C5A059',       // Premium muted gold
+                        goldHover: '#d4af37',
+                        offWhite: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in-down': 'fadeInDown 0.3s ease-out forwards',
+                        'slow-pan': 'slowPan 20s infinite alternate linear',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowPan: {
+                            '0%': { transform: 'scale(1.05) translate(0, 0)' },
+                            '100%': { transform: 'scale(1.1) translate(-2%, -2%)' },
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -15px rgba(0,0,0,0.1)',
+                        'gold': '0 4px 14px 0 rgba(197, 160, 89, 0.39)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS for advanced animations and overrides -->
+    <style>
+        /* Base load state */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Reveal animations triggered by intersection observer */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delays for staggered reveal */
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        /* Horizontal Gallery Scrollbar hiding */
+        .horizontal-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .horizontal-gallery {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Image zoom container */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+
+        .img-zoom-container img {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .img-zoom-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-offWhite text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Header (Transparent on Hero, Solid on Scroll) -->
+    <header id="main-header" data-transparent="true"
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 z-20">
+                    <a href="index.html" class="flex flex-col group">
+                        <span
+                            class="logo-text text-2xl font-serif font-bold text-white tracking-tight transition-colors">Jubayer
+                            & Associates</span>
+                        <span
+                            class="text-[10px] text-gold font-medium uppercase tracking-[0.2em] mt-1 group-hover:text-goldHover transition-colors">Reliable
+                            Legal Solutions</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-10 items-center">
+                    <a href="index.html"
+                        class="nav-link relative text-gold font-medium text-sm uppercase tracking-wider active">
+                        Home
+                    </a>
+                    <a href="about.html"
+                        class="nav-link relative text-white hover:text-gold font-medium text-sm uppercase tracking-wider transition-colors">
+                        About
+                    </a>
+                    <a href="practice-areas.html"
+                        class="nav-link relative text-white hover:text-gold font-medium text-sm uppercase tracking-wider transition-colors">
+                        Practice Areas
+                    </a>
+                    <a href="blog.html"
+                        class="nav-link relative text-white hover:text-gold font-medium text-sm uppercase tracking-wider transition-colors">
+                        Blog
+                    </a>
+                    <a href="contact.html"
+                        class="nav-link relative text-white hover:text-gold font-medium text-sm uppercase tracking-wider transition-colors">
+                        Contact
+                    </a>
+                    <a href="contact.html"
+                        class="bg-gold text-navy px-6 py-2.5 rounded-sm font-semibold text-sm hover:bg-goldHover hover:shadow-gold transition-all duration-300 transform hover:-translate-y-0.5 tracking-wide">
+                        Consultation
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center z-20">
+                    <button id="mobile-menu-btn"
+                        class="text-white hover:text-gold focus:outline-none transition-colors p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-navy/95 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+            <div class="px-6 py-8 space-y-6 text-center">
+                <a href="index.html" class="block font-serif text-xl tracking-wide">
+                    Home
+                </a>
+                <a href="about.html" class="block font-serif text-xl tracking-wide">
+                    About
+                </a>
+                <a href="practice-areas.html" class="block font-serif text-xl tracking-wide">
+                    Practice Areas
+                </a>
+                <a href="blog.html" class="block font-serif text-xl tracking-wide">
+                    Blog
+                </a>
+                <a href="contact.html" class="block font-serif text-xl tracking-wide">
+                    Contact
+                </a>
+                <div class="pt-4">
+                    <a href="contact.html"
+                        class="inline-block border border-gold text-gold hover:bg-gold hover:text-navy px-8 py-3 rounded-sm font-bold tracking-widest uppercase text-xs transition-all">
+                        Book Consultation
+                    </a>
+                </div>
+            </div>
+    </header>
+
+    <main>
+        <!-- 1. Cinematic Hero Section -->
+        <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+
+            <!-- Background Image with Pan Animation -->
+            <div class="absolute inset-0 z-0 bg-navy">
+                <img src="pictures/office_3.jpeg" alt="Law Firm Office"
+                    class="w-full h-full object-cover opacity-40 animate-slow-pan">
+
+                <!-- Dark Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-transparent"></div>
+
+                <!-- Vignette -->
+                <div class="absolute inset-0 shadow-[inset_0_0_150px_rgba(0,0,0,0.8)]"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+
+                <!-- Tagline -->
+                <p class="text-gold font-sans tracking-[0.3em] uppercase text-sm font-semibold mb-6 animate-fade-in-up">
+                    Uncompromising Legal Excellence
+                </p>
+
+                <!-- Main Heading -->
+                <h1
+                    class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-8 animate-fade-in-up delay-100 drop-shadow-xl">
+
+                    Strategic Representation <br />
+                    <span class="text-gold italic font-light">
+                        You Can Trust.
+                    </span>
+
+                </h1>
+
+                <!-- Subheading -->
+                <p
+                    class="text-lg md:text-2xl text-white/80 font-light max-w-2xl mx-auto mb-12 animate-fade-in-up delay-200 leading-relaxed">
+
+                    Advocate Jubaiyer provides dedicated, high-stakes legal advocacy across Dhaka, Bangladesh.
+
+                </p>
+
+                <!-- Button -->
+                <div class="animate-fade-in-up delay-300">
+                    <a href="contact.html"
+                        class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-navy bg-gold hover:bg-white hover:text-navy transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(197,160,89,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] transform hover:-translate-y-1">
+
+                        Book a Consultation
+
+                        <i class="fas fa-arrow-right ml-3 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+                <p class="text-white/50 text-xs uppercase tracking-widest mb-2 text-center">
+                    Scroll
+                </p>
+                <div class="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent mx-auto"></div>
+            </div>
+
+        </section>
+
+        <!-- 2. The Advocate Section (Split Layout) -->
+        <section class="py-24 lg:py-32 bg-white relative">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-50 z-0"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                    <!-- Portrait Image -->
+                    <div class="relative reveal-on-scroll">
+                        <div
+                            class="absolute -inset-4 border border-gold/30 rounded-sm transform translate-x-4 translate-y-4">
+                        </div>
+                        <div class="img-zoom-container rounded-sm shadow-premium relative z-10 bg-navy">
+                            <!-- Professional portrait placeholder -->
+                            <img src="pictures/office_6.jpeg" alt="Advocate Jubaiyer"
+                                class="w-full aspect-[3/4] object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute bottom-10 -right-6 lg:-right-12 bg-white p-6 shadow-xl rounded-sm border-l-4 border-gold z-20 max-w-[200px]">
+                            <p class="text-3xl font-serif font-bold text-navy mb-1">15+</p>
+                            <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Years of Legal
+                                Excellence</p>
+                        </div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="reveal-on-scroll delay-100 pr-4 lg:pr-0">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-[1px] bg-gold mr-4"></div>
+                            <h2 class="text-gold font-sans uppercase tracking-[0.2em] text-sm font-semibold">The Counsel
+                            </h2>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-navy leading-tight mb-8">
+                            Advocate Md. Saiful Islam Jubayer
+                        </h2>
+
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6 font-light">
+                            With years of dedicated legal practice at the Supreme Court of
+                            Bangladesh, Advocate Jubaiyer has built a reputation for strategic thinking and
+                            uncompromising advocacy. His firm, Jubayer & Associates, is committed to providing
+                            reliable legal solutions across a broad spectrum of legal challenges.
+                        </p>
+                        <p class="text-gray-600 text-lg mb-10 leading-relaxed font-light">
+                            Based in the heart of Dhaka, the practice is built on a foundation of profound ethical
+                            integrity, deep-rooted understanding of Bangladeshi law, and a fierce dedication to
+                            protecting clients' rights in the courtroom.
+                        </p>
+
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-gold mr-4"></i>
+                                <span class="font-medium">Direct Attorney-Client Communication</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-gold mr-4"></i>
+                                <span class="font-medium">Tailored Litigation Strategies</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-gold mr-4"></i>
+                                <span class="font-medium">Confidential & Discerning Counsel</span>
+                            </li>
+                        </ul>
+
+                        <a href="about.html"
+                            class="inline-flex items-center text-navy font-bold uppercase tracking-wider text-sm group">
+                            <span
+                                class="border-b border-navy pb-1 group-hover:border-gold group-hover:text-gold transition-colors">Read
+                                Full Profile</span>
+                            <i
+                                class="fas fa-arrow-right ml-3 text-gold transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Practice Areas (Grid Layout) -->
+        <section class="py-24 bg-navy relative overflow-hidden">
+            <!-- Decorative background element -->
+            <div
+                class="absolute top-0 right-0 w-1/2 h-full opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <p class="text-gold font-sans uppercase tracking-[0.2em] text-sm font-semibold mb-4">Areas of
+                        Expertise</p>
+                    <h2 class="text-4xl lg:text-5xl font-serif font-bold text-white mb-6">Strategic Practice Areas</h2>
+                    <div class="w-16 h-[2px] bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                    <!-- Bank and Bank Companies -->
+                    <div
+                        class="group bg-navyLight border border-white/10 p-10 hover:border-gold/50 transition-all duration-500 reveal-on-scroll img-zoom-container hover:-translate-y-2 lg:col-span-2">
+                        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+                            <div class="lg:w-2/3">
+                                <i
+                                    class="fas fa-university text-4xl text-white/20 group-hover:text-gold transition-colors duration-500 mb-6 block"></i>
+                                <h3 class="text-2xl font-serif font-bold text-white mb-4">Bank and Bank Companies
+                                </h3>
+                                <p class="text-gray-400 font-light lg:mb-0 leading-relaxed max-w-xl">Expert legal
+                                    advisory and litigation services for financial institutions, ensuring regulatory
+                                    compliance and effective loan recovery strategies.</p>
+                            </div>
+                            <div class="mt-8 lg:mt-0">
+                                <a href="practice-areas.html"
+                                    class="inline-block border border-gold text-gold hover:bg-gold hover:text-navy font-semibold px-8 py-3 rounded-sm uppercase tracking-wide text-sm transition-colors">View
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company -->
+                    <div
+                        class="group bg-navyLight border border-white/10 p-10 hover:border-gold/50 transition-all duration-500 reveal-on-scroll delay-100 img-zoom-container hover:-translate-y-2">
+                        <i
+                            class="fas fa-building text-4xl text-white/20 group-hover:text-gold transition-colors duration-500 mb-8 block"></i>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4">Company</h3>
+                        <p class="text-gray-400 font-light mb-8 leading-relaxed">Comprehensive corporate law services
+                            including incorporation, shareholder disputes, mergers, and corporate governance.</p>
+                        <a href="practice-areas.html"
+                            class="text-gold text-sm font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore
+                            Area <i class="fas fa-long-arrow-alt-right ml-2"></i></a>
+                    </div>
+
+                    <!-- VAT & Customs -->
+                    <div
+                        class="group bg-navyLight border border-white/10 p-10 hover:border-gold/50 transition-all duration-500 reveal-on-scroll img-zoom-container hover:-translate-y-2">
+                        <i
+                            class="fas fa-file-invoice-dollar text-4xl text-white/20 group-hover:text-gold transition-colors duration-500 mb-8 block"></i>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4">VAT & Customs</h3>
+                        <p class="text-gray-400 font-light mb-8 leading-relaxed">Strategic counsel on complex taxation,
+                            VAT tribunals, customs disputes, and representation before revenue authorities.</p>
+                        <a href="practice-areas.html"
+                            class="text-gold text-sm font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore
+                            Area <i class="fas fa-long-arrow-alt-right ml-2"></i></a>
+                    </div>
+
+                    <!-- Land Matters -->
+                    <div
+                        class="group bg-navyLight border border-white/10 p-10 hover:border-gold/50 transition-all duration-500 reveal-on-scroll delay-100 img-zoom-container hover:-translate-y-2">
+                        <i
+                            class="fas fa-map-marked-alt text-4xl text-white/20 group-hover:text-gold transition-colors duration-500 mb-8 block"></i>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4">Land Matters</h3>
+                        <p class="text-gray-400 font-light mb-8 leading-relaxed">Navigating complex land litigation,
+                            property registration, title verification, and asserting rightful ownership.</p>
+                        <a href="practice-areas.html"
+                            class="text-gold text-sm font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore
+                            Area <i class="fas fa-long-arrow-alt-right ml-2"></i></a>
+                    </div>
+
+                    <!-- Criminal -->
+                    <div
+                        class="group bg-navyLight border border-white/10 p-10 hover:border-gold/50 transition-all duration-500 reveal-on-scroll delay-200 img-zoom-container hover:-translate-y-2">
+                        <i
+                            class="fas fa-gavel text-4xl text-white/20 group-hover:text-gold transition-colors duration-500 mb-8 block"></i>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4">Criminal</h3>
+                        <p class="text-gray-400 font-light mb-8 leading-relaxed">Aggressive defense representation to
+                            protect your liberty, reputation, and future against serious criminal allegations.</p>
+                        <a href="practice-areas.html"
+                            class="text-gold text-sm font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore
+                            Area <i class="fas fa-long-arrow-alt-right ml-2"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Corporate Clients Section (Scrolling Marquee) -->
+        <section class="py-16 bg-white border-t border-gray-100 overflow-hidden reveal-on-scroll">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+                <p class="text-gray-400 font-sans uppercase tracking-[0.2em] text-xs font-semibold mb-2">Trusted By</p>
+                <h2 class="text-2xl font-serif font-bold text-navy">Corporations We've Worked With</h2>
+            </div>
+
+            <div class="relative w-full overflow-hidden flex bg-offWhite py-8 shadow-inner">
+                <div class="flex animate-[scroll_30s_linear_infinite] w-[200%]">
+                    <!-- First set -->
+                    <div class="flex w-1/2 justify-around items-center px-4">
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">TechCorp Ltd.</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Global Finance Bank</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Nexus Holdings</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Bengal Properties</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Apex Industrial group</div>
+                    </div>
+                    <!-- Second set (duplicate for seamless looping) -->
+                    <div class="flex w-1/2 justify-around items-center px-4">
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">TechCorp Ltd.</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Global Finance Bank</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Nexus Holdings</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Bengal Properties</div>
+                        <div class="text-2xl font-serif font-bold text-navyLight/40 px-8">Apex Industrial group</div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- 4. Dynamic Horizontal Image Gallery -->
+        <section class="py-20 bg-gray-50 border-y border-gray-200 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 reveal-on-scroll">
+                <div class="flex justify-between items-end">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-navy">Behind the Practice</h2>
+                        <div class="h-1 w-16 bg-gold mt-4"></div>
+                    </div>
+                    <!-- Visual cue to scroll horizontally -->
+                    <div class="hidden md:flex items-center text-gray-400 text-sm font-medium tracking-wide uppercase">
+                        <i class="fas fa-arrows-alt-h mr-2"></i> Drag to scroll
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Scroll Container -->
+            <div
+                class="horizontal-gallery flex overflow-x-auto space-x-6 pb-8 px-4 sm:px-6 lg:px-8 max-w-[100vw] reveal-on-scroll delay-100 cursor-grab active:cursor-grabbing snap-x snap-mandatory">
+
+                <!-- Gallery Item 1 (Court) -->
+                <div class="flex-none w-[300px] sm:w-[400px] lg:w-[500px] snap-center">
+                    <div class="img-zoom-container rounded-sm overflow-hidden shadow-lg h-[400px] relative">
+                        <img src="pictures/office_7.jpeg" alt="Courtroom Elements" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-6 left-6">
+                            <h4 class="text-white font-serif text-xl">Courtroom Advocacy</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 (Office / Detail) -->
+                <div class="flex-none w-[300px] sm:w-[400px] lg:w-[500px] snap-center pt-8">
+                    <div class="img-zoom-container rounded-sm overflow-hidden shadow-lg h-[400px] relative">
+                        <img src="pictures/office_8.jpeg" alt="Legal Documents" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-6 left-6">
+                            <h4 class="text-white font-serif text-xl">Meticulous Preparation</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 (Dhaka Context) -->
+                <div class="flex-none w-[300px] sm:w-[400px] lg:w-[500px] snap-center">
+                    <div class="img-zoom-container rounded-sm overflow-hidden shadow-lg h-[400px] relative">
+                        <img src="pictures/dhaka-map-slide1.png" alt="Dhaka Cityscape"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-6 left-6">
+                            <h4 class="text-white font-serif text-xl">Based in Dhaka</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacer for right side padding -->
+                <div class="flex-none w-4 sm:w-8"></div>
+            </div>
+        </section>
+
+        <!-- 5. Testimonial Section -->
+        <section class="py-24 bg-white reveal-on-scroll">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <i class="fas fa-quote-left text-5xl text-gold/20 mb-8 block"></i>
+                <p class="text-2xl md:text-3xl font-serif text-navy leading-relaxed mb-10 italic">
+                    "Advocate Jubaiyer handled my complex corporate litigation with a level of strategic brilliance and
+                    discretion that exceeded all expectations. When you need someone solely focused on your victory, he
+                    is the counsel to retain."
+                </p>
+                <div>
+                    <div
+                        class="w-12 h-12 bg-navy text-gold rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                        H</div>
+                    <h5 class="text-navy font-bold tracking-wide uppercase text-sm">H. Rahman</h5>
+                    <p class="text-gray-500 text-sm">Managing Director, Dhaka</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Powerful CTA Banner -->
+        <section class="py-20 relative bg-navy overflow-hidden">
+            <!-- Background element -->
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gold/5 blur-[100px] rounded-full point-events-none">
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 relative z-10">
+                <div
+                    class="bg-navy/80 backdrop-blur-md p-10 md:p-16 border border-white/10 rounded-sm shadow-premium reveal-on-scroll">
+                    <div class="mb-12">
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
+                            Ready to Discuss Your Case?
+                        </h2>
+                        <p class="text-gray-300 text-lg font-light">
+                            Do not face complex legal challenges alone. Secure strategic
+                            representation today.
+                        </p>
+                    </div>
+
+                    <form id="contact-form-home" action="https://formspree.io/f/meelyowj" method="POST"
+                        class="space-y-6">
+                        <!-- Formspree Honeypot -->
+                        <input type="text" name="_gotcha" style="display:none" />
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="relative">
+                                <input type="text" id="home-name" name="name"
+                                    class="w-full bg-white/5 border-b border-white/20 py-4 px-0 text-white focus:outline-none focus:border-gold transition-colors font-light placeholder:text-gray-500"
+                                    placeholder="Full Name" required>
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="home-email" name="email"
+                                    class="w-full bg-white/5 border-b border-white/20 py-4 px-0 text-white focus:outline-none focus:border-gold transition-colors font-light placeholder:text-gray-500"
+                                    placeholder="Email Address" required>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="home-message" name="message" rows="3"
+                                class="w-full bg-white/5 border-b border-white/20 py-4 px-0 text-white focus:outline-none focus:border-gold transition-colors font-light placeholder:text-gray-500 resize-none"
+                                placeholder="How can we help?" required></textarea>
+                        </div>
+
+                        <div class="text-center pt-6">
+                            <button type="submit"
+                                class="group bg-gold hover:bg-goldHover text-navy font-bold uppercase tracking-[0.2em] text-sm py-5 px-14 rounded-sm shadow-gold transition-all duration-300 transform hover:-translate-y-1">
+                                Send Message
+                                <i class="fas fa-paper-plane ml-3 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+
+                        <div id="form-status-home" class="hidden text-center mt-6 p-4 rounded-sm text-sm font-medium">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Premium Footer -->
+    <footer class="bg-navyLight pt-20 pb-10 border-t-[3px] border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 border-b border-white/10 pb-16">
+                <!-- Branding -->
+                <div class="mb-10 md:mb-0 text-center md:text-left max-w-sm">
+                    <a href="index.html" class="inline-block mb-6">
+                        <span class="text-2xl font-serif font-bold text-white tracking-tight">
+                            Jubayer & Associates
+                        </span><br />
+                        <span class="text-[10px] text-gold font-medium uppercase tracking-[0.2em]">
+                            Reliable Legal Solutions
+                        </span>
+                    </a>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">
+                        Delivering uncompromising advocacy and tailored legal strategies from the
+                        heart of Dhaka, Bangladesh.
+                    </p>
+                </div>
+
+                <!-- Contact Direct -->
+                <div class="text-center md:text-right">
+                    <h4 class="text-white font-sans uppercase tracking-[0.15em] text-xs font-semibold mb-6">Direct
+                        Contact</h4>
+                    <a href="tel:+8801720545533"
+                        class="block text-2xl font-serif text-gold hover:text-white transition-colors mb-2 tracking-tighter">01720-545533</a>
+                    <a href="mailto:jubayerandassociates@gmail.com"
+                        class="block text-gray-400 hover:text-white transition-colors text-sm mb-6">jubayerandassociates@gmail.com</a>
+
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"><i
+                                class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-gray-400 hover:border-gold hover:text-gold transition-all duration-300"><i
+                                class="fab fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light tracking-wide">
+                <p class="mb-4 md:mb-0">&copy; 2026 Jubayer & Associates. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="privacy-policy.html" class="hover:text-gold transition-colors">Privacy Policy</a>
+                    <span>Disclaimer: This website does not constitute legal advice.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
